@@ -11,4 +11,5 @@ sudo mount -t iso9660 -o loop ${VAGRANT_HOME}/VBoxGuestAdditions_$VBOX_VERSION.i
 sudo sh /mnt/VBoxLinuxAdditions.run
 sudo umount /mnt
 sudo /etc/rc.d/init.d/vboxadd setup
+rm ${VAGRANT_HOME}/VBoxGuestAdditions_$VBOX_VERSION.iso
 
