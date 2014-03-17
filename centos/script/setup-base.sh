@@ -17,6 +17,15 @@ sudo sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
 echo "Installing Packages"
 sudo yum install -y gcc make perl kernel-headers-`uname -r` kernel-devel-`uname -r` wget
 
+# installing dkms packages from epel
+sudo sh -c 'echo "[epel]" >> /etc/yum.repos.d/epel.repo'
+sudo sh -c 'echo "name=EPEL Packages for Enterprise Linux 6 - \$basearch" >> /etc/yum.repos.d/epel.repo'
+sudo sh -c 'echo "baseurl=http://dl.fedoraproject.org/pub/epel/6/\$basearch" >> /etc/yum.repos.d/epel.repo'
+sudo sh -c 'echo "enabled=0" >> /etc/yum.repos.d/epel.repo'
+sudo sh -c 'echo "gpgcheck=0" >> /etc/yum.repos.d/epel.repo'
+sudo yum --enablerepo=epel install -y dkms
+sudo rm /etc/yum.repos.d/epel.repo
+
 # installing vagrant keys
 echo "Installing Vagrant User Keys"
 mkdir -pm 700 ${VAGRANT_HOME}/.ssh
