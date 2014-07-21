@@ -16,7 +16,7 @@ sudo sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
 # installing packages
 echo "Installing Packages"
 sudo yum install -y gcc make perl kernel-headers-`uname -r` kernel-devel-`uname -r` wget
-sudo yum groupinstall 'Development tools'
+sudo yum groupinstall -y 'Development tools'
 
 # installing dkms packages from epel
 sudo sh -c 'echo "[epel]" >> /etc/yum.repos.d/epel.repo'
