@@ -40,7 +40,7 @@
     {
       "type": "shell",
       "scripts": [
-        "./script/setup-base.sh",
+        "./script/centos7-setup-base.sh",
         "./script/install-virtualbox-guest-additions.sh"
       ]
     }
