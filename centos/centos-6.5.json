@@ -32,7 +32,7 @@
       ],
       "http_directory": "./http/",
       "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks-6.5.cfg<enter><wait>"
       ]
     }
   ],
@@ -40,7 +40,7 @@
     {
       "type": "shell",
       "scripts": [
-        "./script/setup-base.sh",
+        "./script/centos6-setup-base.sh",
         "./script/install-virtualbox-guest-additions.sh"
       ]
     }
