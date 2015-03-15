@@ -14,7 +14,11 @@ echo "Disable SELinux"
 sudo /usr/sbin/setenforce 0
 sudo sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
 
-# installing packages
+# updating & installing packages
+echo "Updating Packages"
+sudo yum clean all
+sudo yum check-update
+sudo yum update -y
 echo "Installing Packages"
 sudo yum install -y gcc make perl kernel-headers-`uname -r` kernel-devel-`uname -r` wget
 sudo yum groupinstall -y 'Development tools'
