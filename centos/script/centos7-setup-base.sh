@@ -20,7 +20,7 @@ sudo yum clean all
 sudo yum check-update
 sudo yum update -y
 echo "Installing Packages"
-sudo yum install -y gcc make perl kernel-headers-`uname -r` kernel-devel-`uname -r` wget
+sudo yum install -y gcc make perl kernel-headers-`uname -r` kernel-devel-`uname -r` curl wget git
 sudo yum groupinstall -y 'Development tools'
 
 # installing dkms packages from epel
